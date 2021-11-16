@@ -1,10 +1,9 @@
 import app from '@config/CustomExpress';
 
 function createWebserver() {
-  function start() {
+  function start(SERVER_PORT: number) {
     console.log('> [webserver] Starting ...');
-
-    app.listen(process.env.SERVER_PORT, () => console.log(`Rodando Servidor na porta ${process.env.SERVER_PORT}`));
+    app.listen(SERVER_PORT, () => console.log(`Rodando Servidor na porta ${SERVER_PORT}`));
 
     console.log('> [webserver] Starting done!');
   }

@@ -1,14 +1,16 @@
-import createWebserver from './WebServer';
+import loadEnvironment from '@config/Environment';
+import createWebserver from '@config/WebServer';
 
 // eslint-disable-next-line no-unused-vars
-function createCore(configuration = {}) {
+function createCore(configuration: any = {}) {
+  const environment = loadEnvironment();
   // TODO createDatabaseConnection
   const webserver = createWebserver();
 
   function start() {
     console.log('> [core] Starting...');
     // database.start();
-    webserver.start();
+    webserver.start(environment.PORT as number);
     console.log('> [core] Starting done! System running!');
   }
 

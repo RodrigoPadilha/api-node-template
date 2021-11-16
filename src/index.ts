@@ -1,8 +1,6 @@
 import createCore from '@config/Core';
-import { config } from 'dotenv';
 
 try {
-  config();
   const core = createCore();
   core.start();
   core.stop();
