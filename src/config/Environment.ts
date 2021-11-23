@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 import { resolve } from 'path';
 
+// path: resolve(__dirname, `${process.env.NODE_ENV}.env`),
 function loadEnvironment() {
   config({
     /* path: resolve(__dirname, `.env.${process.env.NODE_ENV}`), */
